@@ -12,6 +12,7 @@ Some information one find useful for incident response purposes. What should you
 - Sophos Security Advisory: https://www.sophos.com/en-us/security-advisories/sophos-sa-20211210-log4j-rce
 - McAfee Security Advisory: https://kc.mcafee.com/corporate/index?page=content&id=KB95091
 - F-Secure Security Advisory: https://status.f-secure.com/incidents/sk8vmr0h34pd
+- Exploitation detection sources: https://gist.github.com/Neo23x0/e4c8b03ff8cdf1fa63b7d15db6e3860b
 
 ## 1 - Identify what is vulnerable
 
@@ -21,11 +22,23 @@ Anything **older** then 2.15.0 might give you problems.
 
 ``find / -type f -name 'log4j-core*'``
 
+Search in uncompressed files in folder `/var/log`:
+
+``sudo egrep -I -i -r '\$(\{|%7B)jndi:(ldap[s]?|rmi|dns|nis|iiop|corba|nds|http):/[^\n]+' /var/log``
+
+Search in compressed files in folder  `/var/log`:
+
+``sudo egrep -I -i -r '\$(\{|%7B)jndi:(ldap[s]?|rmi|dns|nis|iiop|corba|nds|http):/[^\n]+' /var/log``
+
 ### Windows
 
 Powershell:
 
 ``Get-ChildItem -Recurse -Filter 'log4j-core*'``
+
+More Windows:
+
+``gci 'C:\' -rec -force -include *.jar -ea 0 | foreach {select-string "JndiLookup.class" $_} | select -exp Path``
 
 ### Web & Embedded systems
 If you cannot touch the target system in a way to search for the installation of the system you can test your way through an application. This can be done manually, or semi-automatically with Burp (Professional I guess, since you need the Intruder) or OWASP ZAP:
@@ -38,6 +51,10 @@ If you cannot touch the target system in a way to search for the installation of
 - Walk to the interface you want to test
 - Activate maximum logging within the web application
 - Enter the string everywhere you can and see if you get an email
+
+### Yara
+
+https://github.com/Neo23x0/signature-base/blob/master/yara/expl_log4j_cve_2021_44228.yar
 
 ### Links
 
