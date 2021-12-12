@@ -7,6 +7,9 @@ Some information one find useful for incident response purposes. What should you
 4. Shutdown systems you really don't need to survive
 5. All other systems should be tightly monitored
 
+## Basic stuff
+- What? https://cve.mitre.org/cgi-bin/cvename.cgi?name=2021-44228
+
 ## 1 - Identify what is vulnerable
 
 ### Linux
