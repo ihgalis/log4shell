@@ -80,3 +80,58 @@ All of the following categories of systems could help to prevent an attack on un
 - Web Application Firewalls
 - Intrusion Prevent Systems
 - Reverse Proxies
+
+### IOCs / Payload
+
+- https://blog.netlab.360.com/threat-alert-log4j-vulnerability-has-been-adopted-by-two-linux-botnets/
+
+#### DoH services
+Used by Muhstik (Log4shell Payload)
+
+```
+doh.defaultroutes.de
+dns.hostux.net
+dns.dns-over-https.com
+uncensored.lux1.dns.nixnet.xyz
+dns.rubyfish.cn dns.twnic.tw
+doh.centraleu.pi-dns.com
+doh.dns.sb doh-fi.blahdns.com
+fi.doh.dns.snopyta.org
+dns.flatuslifir.is
+doh.li
+dns.digitale-gesellschaft.ch
+```
+
+#### Related TOR nodes
+
+```
+bvprzqhoz7j2ltin.onion.ws
+bvprzqhoz7j2ltin.onion.ly
+bvprzqhoz7j2ltin.tor2web.s
+```
+
+#### C2 servers
+
+```
+nazi.uy
+log.exposedbotnets.ru
+```
+
+#### URLS
+
+```
+http://62.210.130.250/lh.sh
+http://62.210.130.250:80/web/admin/x86_64
+http://62.210.130.250:80/web/admin/x86
+http://62.210.130.250:80/web/admin/x86_g
+http://45.130.229.168:9999/Exploit.class
+http://18.228.7.109/.log/log
+http://18.228.7.109/.log/pty1;
+http://18.228.7.109/.log/pty2;
+http://18.228.7.109/.log/pty3;
+http://18.228.7.109/.log/pty4;
+http://18.228.7.109/.log/pty5;
+http://210.141.105.67:80/wp-content/themes/twentythirteen/m8
+http://159.89.182.117/wp-content/themes/twentyseventeen/ldm
+```
+
