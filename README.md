@@ -41,7 +41,8 @@ If you cannot touch the target system in a way to search for the installation of
 
 ### Links
 
-- What is vulnerable, according to others: https://github.com/YfryTchsGD/Log4jAttackSurface
+- What is vulnerable, according to others Nr.1: https://github.com/YfryTchsGD/Log4jAttackSurface
+- What is vulnerable, according to others Nr.2: https://gist.github.com/SwitHak/b66db3a06c2955a9cb71a8718970c592
 - Find vulnerability with scripts: https://gist.github.com/byt3bl33d3r/46661bc206d323e6770907d259e009b6
 
 
