@@ -9,6 +9,9 @@ Some information one find useful for incident response purposes. What should you
 
 ## Basic stuff
 - What? https://cve.mitre.org/cgi-bin/cvename.cgi?name=2021-44228
+- Sophos Security Advisory: https://www.sophos.com/en-us/security-advisories/sophos-sa-20211210-log4j-rce
+- McAfee Security Advisory: https://kc.mcafee.com/corporate/index?page=content&id=KB95091
+- F-Secure Security Advisory: https://status.f-secure.com/incidents/sk8vmr0h34pd
 
 ## 1 - Identify what is vulnerable
 
@@ -49,7 +52,10 @@ This one is tricky since you need to have email newsletters activated and/or rec
 - Contact them and ask for advice what to do and when to expect patches
 
 ## 3 - Deploy updates where possible (**log4j >= 2.15.0**)
-TBD
+Change different parameters for log4j if you have access to it (log4j >= 2.10). Be careful since this change might break something else you are not aware you might need?
+
+- Start the JVM with this parameter: ```-Dlog4j2.formatMsgNoLookups=True```
+- Or: Set the environment variable **LOG4J_FORMAT_MSG_NO_LOOKUPS** on **true**
 
 ## 4 - Shutdown systems you really don't need to survive
 I don't have to explain this, right?
@@ -65,3 +71,10 @@ Rewrap your network design and make it tight. Isolate the vulnerable devices, if
 - Review the logs by yourself if you have time for this
 - Send the logs regularly to your security professional of trust
 - Let us do our work and identify malicious stuff
+
+### More technology
+All of the following categories of systems could help to prevent an attack on unpatched systems. Obviously you need to know how to deploy and configure it properly to identify a malicious scan for the vulnerability.
+
+- Web Application Firewalls
+- Intrusion Prevent Systems
+- Reverse Proxies
