@@ -28,7 +28,7 @@ Powershell:
 ``Get-ChildItem -Recurse -Filter 'log4j-core*'``
 
 ### Web & Embedded systems
-If you cannot touch the target system in a way to search for the installation of the system you can test your way through an application. This can be done manually, or semi-automatically with Burop or OWASP ZAP:
+If you cannot touch the target system in a way to search for the installation of the system you can test your way through an application. This can be done manually, or semi-automatically with Burp (Professional I guess, since you need the Intruder) or OWASP ZAP:
 
 - Go to https://canarytokens.org/generate
 - Select **Log4Shell** (the last one)
