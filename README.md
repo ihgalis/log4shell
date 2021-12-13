@@ -34,7 +34,9 @@ Search in compressed files in folder  `/var/log`:
 
 Powershell:
 
-``Get-ChildItem -Recurse -Filter 'log4j-core*'``
+``Get-ChildItem -Recurse -Filter 'log4j-core*' -Path C:\``
+
+``Get-ChildItem -Recurse -Filter 'log4j-*' -Path C:\``
 
 More Windows:
 
@@ -58,9 +60,10 @@ https://github.com/Neo23x0/signature-base/blob/master/yara/expl_log4j_cve_2021_4
 
 ### Links
 
-- What is vulnerable, according to others Nr.1: https://github.com/YfryTchsGD/Log4jAttackSurface
-- What is vulnerable, according to others Nr.2: https://gist.github.com/SwitHak/b66db3a06c2955a9cb71a8718970c592
-- What is vulnerable, according to others Nr.3: https://github.com/NCSC-NL/log4shell/tree/main/software
+- What is vulnerable
+https://gist.github.com/SwitHak/b66db3a06c2955a9cb71a8718970c592
+https://github.com/NCSC-NL/log4shell/tree/main/software
+
 - Find vulnerability with scripts: https://gist.github.com/byt3bl33d3r/46661bc206d323e6770907d259e009b6
 
 
