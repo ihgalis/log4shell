@@ -60,6 +60,7 @@ https://github.com/Neo23x0/signature-base/blob/master/yara/expl_log4j_cve_2021_4
 
 - What is vulnerable, according to others Nr.1: https://github.com/YfryTchsGD/Log4jAttackSurface
 - What is vulnerable, according to others Nr.2: https://gist.github.com/SwitHak/b66db3a06c2955a9cb71a8718970c592
+- What is vulnerable, according to others Nr.3: https://github.com/NCSC-NL/log4shell/tree/main/software
 - Find vulnerability with scripts: https://gist.github.com/byt3bl33d3r/46661bc206d323e6770907d259e009b6
 
 
@@ -84,6 +85,11 @@ I don't have to explain this, right?
 ### Networking
 Rewrap your network design and make it tight. Isolate the vulnerable devices, if possible, as quick as you can into one quarantine subnet. Restrict traffic to the minimum needed. Go for logging.
 
+### Firewalling
+In case you can isolte affected systems, the following firewall rules should be applied:
+
+- Block all LDAP and RMI protocol outbound traffic on affected machines
+
 ### Logging
 - Activate the logs of any vulnerable system to the maximum
 - Activate the firewall logs in a way to monitor outgoing connections
@@ -98,9 +104,12 @@ All of the following categories of systems could help to prevent an attack on un
 - Intrusion Prevent Systems
 - Reverse Proxies
 
+Detection in general: https://github.com/NCSC-NL/log4shell/tree/main/mitigation
+
 ### IOCs / Payload
 
-- https://blog.netlab.360.com/threat-alert-log4j-vulnerability-has-been-adopted-by-two-linux-botnets/
+- Sources for the IOCs in this document: https://blog.netlab.360.com/threat-alert-log4j-vulnerability-has-been-adopted-by-two-linux-botnets/
+- A lot of IOCs: https://github.com/NCSC-NL/log4shell/tree/main/iocs
 
 #### DoH services
 Used by Muhstik (Log4shell Payload)
